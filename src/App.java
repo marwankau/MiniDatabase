@@ -61,7 +61,7 @@ public class App {
             }
         }
     }
-    private static void writeFixedString(String name, BufferedWriter bf, int length) throws IOException {
+    private static void writeFixedString(String name, BufferedWriter bf, int length) {
         if (name.length() > length) {
             name = name.substring(0, length);
         }
@@ -74,6 +74,10 @@ public class App {
             }
             
         }
-        bf.write(b);
+        try {
+            bf.write(b);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
