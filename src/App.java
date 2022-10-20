@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/source.csv", StandardCharsets.UTF_8))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("data/source.csv"))) {
             String line = reader.readLine(); // skip column title (first line)
 
 
