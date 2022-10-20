@@ -1,4 +1,4 @@
-// how to create new file called data.db as binary file and write contents of source.csv as binary
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
