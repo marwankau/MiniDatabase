@@ -29,7 +29,7 @@ public class App {
         FileOutputStream fos = new FileOutputStream("src/data.db");
         DataOutputStream dos = new DataOutputStream(fos); 
             String line = reader.readLine(); // skip column title (first line)
-           byte[] name = " ";
+            String  name = " ";
 
 
             while ((line = reader.readLine()) != null) {
@@ -50,19 +50,7 @@ public class App {
                 byte[] Industryname = new byte[50];
                 dos.writeDouble(value);
 
-                dos.writeInt(year);
-                name = Industryaggregation;
-                writeFixedString(name, Industryaggregation, 10);
-                dos.write(Industryaggregation);
-                writeFixedString(name, fixedIndustrycode, 10);
-
-                dos.write(Industryaggregation);
-                writeFixedString(name, Industryaggregation, 10);
-
-                dos.write(Industryaggregation);
-
-                dos.writeDouble(value);
-        
+                
 
 
                 
@@ -73,10 +61,10 @@ public class App {
     }
     private static void writeFixedString(byte[] name, byte[] buff, int length) {
         for (int i = 0; i < length; i++) {
-            if (name.length() <= i) {
+            if (name.length <= i) {
                 buff[i] = 0;
             } else {
-                buff[i] = (byte)name.charAt(i);
+                buff[i] = (byte)name.length;
             }
         }
     }
