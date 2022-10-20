@@ -1,18 +1,17 @@
-## Getting Started
+# Mini Database
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+The aim of this app to open text file with a CSV and convert it contents into binary file.
 
-## Folder Structure
+## Your Task
+Complete Java code to implement binary file from `source.csv` contents. The implementation of reading the csv file is already done for you. So your task is to create new file called `data.db` as binary file and write contents of `source.csv` as binary using following instructions: 
 
-The workspace contains two folders by default, where:
+|   | Year | Industry aggregation | Industry code | Industry name | Value |
+| ---- | --- | ------------------ | ------------- | ------------- | ----- |
+| type | `int` | `String`         | `String`      | `String`      | `double` |
+| length |  |  10 | 8 | 50 |  |
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Each string you should write fixed length string as stated above.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Screen Capture
+Here is a sample run
+![Screen Capture](/images/screen-capture.png)
