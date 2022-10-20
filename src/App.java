@@ -24,13 +24,12 @@ public class App {
   
         {
                  File db = new File("src/data.db");
-        FileInputStream fis = new FileInputStream("data/source.csv");
-        DataInputStream dis = new DataInputStream(fis);
+
         FileOutputStream fos = new FileOutputStream("src/data.db");
         DataOutputStream dos = new DataOutputStream(fos); 
             String line = reader.readLine(); // skip column title (first line)
             String  name = " ";
-
+            byte buff[];
 
             while ((line = reader.readLine()) != null) {
                 Scanner scanner = new Scanner(line);
@@ -50,6 +49,11 @@ public class App {
                 byte[] Industryname = new byte[50];
                 dos.writeDouble(value);
 
+                dos.writeInt(year);
+                writeFixedString(industryAggregation.getBytes(), 10);
+                writeFixedString(industryCode.getBytes(),   8);
+                writeFixedString(industryName.getBytes(), 50);
+                dos.writeDouble(value);
                 
 
 
@@ -59,12 +63,12 @@ public class App {
             System.err.println(e.getMessage());
         }
     }
-    private static void writeFixedString(byte[] name, byte[] buff, int length) {
+    private static void writeFixedString(byte[] name, int length) {
         for (int i = 0; i < length; i++) {
-            if (name.length <= i) {
-                buff[i] = 0;
+            if ( i < name.length ) {
+               name[i] = (byte)name.length;
             } else {
-                buff[i] = (byte)name.length;
+                 name[i] = 0;
             }
         }
     }
