@@ -1,13 +1,8 @@
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-
-import javax.xml.catalog.Catalog;
 
 public class App {
     public static void main(String[] args) {
