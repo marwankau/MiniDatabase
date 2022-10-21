@@ -25,9 +25,9 @@ public class App {
 
 
                 dos.writeInt(year);
-                dos.write(FixedString (industryAggregation.getBytes(),10));
-                dos.write(FixedString (industryCode.getBytes(),8));
-                dos.write(FixedString (industryName.getBytes(),50));
+                dos.write(writeFixedString (industryAggregation.getBytes(),10));
+                dos.write(writeFixedString (industryCode.getBytes(),8));
+                dos.write(writeFixedString (industryName.getBytes(),50));
                 dos.writeDouble(value);
 
 
@@ -42,14 +42,14 @@ public class App {
             System.err.println(e.getMessage());
         }
     }
-        public static byte[] FixedString (byte[] text, int len){
+        public static byte[] writeFixedString (byte[] b, int len){
             byte[] arr = new byte[len];
     
             for (int i = 0; i < len; i++) {
-                if(i < text.length){
-                    arr[i] = text[i];
+                if(i < b.length){
+                    arr[i] = b[i];
                 }else{
-                    arr[i] = ' ';
+                    arr[i] =' ';
                 }
             }
     
