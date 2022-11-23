@@ -25,5 +25,13 @@ public class App {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
+        FileOutputStream data1 = new FileOutputStream("data.db");
+        DataOutputStream d = new DataOutputStream(data1);
+            d.writeUTF(industryAggregation);
+            d.writeUTF(industryCode);
+            d.writeUTF(industryName);
+            d.writeInt(value);
+            close(data1);
+            close(d);
     }
 }
